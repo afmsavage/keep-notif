@@ -1,27 +1,28 @@
 {
   "name": "keep-notifications",
   "version": "1.0.0",
-  "description": "",
+  "description": "Discord bot for different keep.network info",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "lint": "eslint ."
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["discord", "javascript", "node", "keepnetwork", "web3", "ethereum" ],
+  "author": "afmsavage@gmail.com",
   "license": "ISC",
   "dependencies": {
     "@keep-network/keep-core": "^1.2.4-rc.1",
     "@keep-network/keep-ecdsa": "^1.1.2-rc.0",
     "@keep-network/tbtc": "^1.0.2-rc.0",
-    "@maticnetwork/eth-dagger": "0.0.3",
     "axios": "^0.19.2",
-    "bnc-sdk": "^2.1.3",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "web3": "^1.2.9",
-    "ws": "^7.3.0"
+    "web3data-js": "^0.7.3"
   },
   "devDependencies": {
+    "@types/web3": "^1.2.2",
     "eslint": "^7.3.0"
   }
 }
