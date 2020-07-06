@@ -1,26 +1,16 @@
-const Web3 = require('web3');
+
 require('dotenv').config();
-const web3 = new Web3('https://cloudflare-eth.com'); // `wss://mainnet.infura.io/ws/v3/${process.env.INFURA}`);
-
-const tbtcContract = require('@keep-network/tbtc/artifacts/TBTCToken.json');
-const tbtcAddress = process.env.MAINTTBTC;
-
-// gets tBTC supply
-// const getSupply = async () => {
-//   const contract = new web3.eth.Contract(tbtcContract.abi, tbtcAddress);
-//   const total = await contract.methods.totalSupply().call();
-//   return web3.utils.fromWei(total);
-// };
-
-// module.exports = { getSupply };
+const axios = require('axios').default;
+const tbtcAddress = '0x1bbe271d15bb64df0bc6cd28df9ff322f2ebd847';
+const tokenInfoUrl = `https://api.ethplorer.io/getTokenInfo/${tbtcAddress}?apiKey=freekey`;
 
 module.exports = {
   name: 'tbtcholders',
-  description : 'get the total amount of holders of tBTC',
+  description: 'get the total amount of holders of tBTC',
   async execute(message) {
-    const contract = new web3.eth.Contract(tbtcContract.abi, tbtcAddress);
-    const holders = await contract.methods.totalSupply().call();
-    message.channel.send(web3.utils.fromWei(total));
-  }
-
+    axios.get(tokenInfoUrl).then(function (response) {
+      const totalHolders = response.data.holdersCount;
+      message.channel.send(`Amount of tBTC Holders: ${totalHolders}`);
+    });
+  },
 };
