@@ -1,7 +1,7 @@
 
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 const axios = require('axios').default;
-const tbtcAddress = '0x1bbe271d15bb64df0bc6cd28df9ff322f2ebd847';
+const tbtcAddress = process.env.MAINTBTC;
 const tokenInfoUrl = `https://api.ethplorer.io/getTokenInfo/${tbtcAddress}?apiKey=freekey`;
 
 module.exports = {

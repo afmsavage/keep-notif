@@ -33,7 +33,7 @@ client.on('message', (message) => {
 
   if (message.content === '!help') {
     message.channel.send(
-      'Available commands: !supply, !txs, !holders, !help, ...more to come!  suggestions welcome!'
+      'Available commands: !supply, !txs, !holders, !tdt, !help, ...more to come!  suggestions welcome!'
     );
   } else if (command === 'holders') {
     client.commands.get('tbtcholders').execute(message, args);
@@ -41,7 +41,27 @@ client.on('message', (message) => {
     client.commands.get('tbtcsupply').execute(message, args);
   } else if (command === 'txs') {
     client.commands.get('tbtcdailytransfers').execute(message, args);
+  } else if (command === 'tdt') {
+    client.commands.get('tdttransfers').execute(message, args);
   }
 });
+
+/* can replace with this for dynamic reading of commands
+client.on('message', message => {
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+	const args = message.content.slice(prefix.length).split(/ +/);
+	const command = args.shift().toLowerCase();
+
+	if (!client.commands.has(command)) return;
+
+	try {
+		client.commands.get(command).execute(message, args);
+	} catch (error) {
+		console.error(error);
+		message.reply('there was an error trying to execute that command!');
+	}
+});
+*/
 
 client.login(process.env.BOTTOKEN);

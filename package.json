@@ -1,6 +1,6 @@
 {
   "name": "keep-notifications",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Discord bot for different keep.network info",
   "main": "index.js",
   "scripts": {
@@ -14,13 +14,13 @@
     "node",
     "keepnetwork",
     "web3",
-    "ethereum"
+    "ethereum",
+    "tbtc"
   ],
   "author": "afmsavage@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@keep-network/keep-core": "^1.2.4-rc.1",
-    "@keep-network/keep-ecdsa": "^1.1.2-rc.0",
     "@keep-network/tbtc": "^1.0.2-rc.0",
     "axios": "^0.19.2",
     "discord.js": "^12.2.0",
