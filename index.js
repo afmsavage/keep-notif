@@ -33,7 +33,7 @@ client.on('message', (message) => {
 
   if (message.content === '!help') {
     message.channel.send(
-      'Available commands: !supply, !txs, !holders, !tdt, !help, ...more to come!  suggestions welcome!'
+      'Available commands: !supply, !txs, !holders, !tdt, !volume, !help, ...more to come!  suggestions welcome!'
     );
   } else if (command === 'holders') {
     client.commands.get('tbtcholders').execute(message, args);
@@ -43,6 +43,8 @@ client.on('message', (message) => {
     client.commands.get('tbtcdailytransfers').execute(message, args);
   } else if (command === 'tdt') {
     client.commands.get('tdttransfers').execute(message, args);
+  } else if (command === 'volume') {
+    client.commands.get('tbtcvolume').execute(message, args);
   }
 });
 
