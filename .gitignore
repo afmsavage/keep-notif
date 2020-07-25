@@ -112,8 +112,7 @@ dist
 .vscode-test
 
 ### VisualStudioCode ###
-**/.vscode/*
-!.vscode/settings.json
+.vscode/*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
