@@ -12,7 +12,7 @@ module.exports = {
     const contract = new web3.eth.Contract(tbtcContract.abi, tbtcAddress);
     const total = await contract.methods.totalSupply().call();
     message.channel.send(
-      `Total ammount of minted tBTC: ${web3.utils.fromWei(total)}`
+      `Total amount of minted tBTC: ${web3.utils.fromWei(total)}`
     );
   },
 };

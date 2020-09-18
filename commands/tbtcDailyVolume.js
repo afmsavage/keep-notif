@@ -1,7 +1,7 @@
 const { ethers } = require('ethers');
 const provider = new ethers.getDefaultProvider();
 const tbtcContract = require('@keep-network/tbtc/artifacts/TBTCToken.json');
-const tbtcAddress = '0x1bbe271d15bb64df0bc6cd28df9ff322f2ebd847';
+const tbtcAddress = '0x8dAEBADE922dF735c38C80C7eBD708Af50815fAa';
 
 const contract = new ethers.Contract(tbtcAddress, tbtcContract.abi, provider);
 let dailyVolume = 0;
