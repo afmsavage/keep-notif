@@ -1,4 +1,3 @@
-
 require('dotenv').config({ path: '../.env' });
 const axios = require('axios').default;
 const tbtcAddress = process.env.MAINTBTC;
