@@ -1,7 +1,9 @@
-
 require('dotenv').config({ path: '../.env' });
 const { ethers } = require('ethers');
-const provider = new ethers.getDefaultProvider();
+const provider = new ethers.providers.InfuraProvider(
+  'homestead',
+  process.env.INFURA
+);
 
 const tbtcContract = require('@keep-network/tbtc/artifacts/TBTCToken.json');
 const tbtcAddress = process.env.MAINTBTC;

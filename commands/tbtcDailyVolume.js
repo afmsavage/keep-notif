@@ -1,7 +1,10 @@
 const { ethers } = require('ethers');
-const provider = new ethers.getDefaultProvider();
+const provider = new ethers.providers.InfuraProvider(
+  'homestead',
+  process.env.INFURA
+);
 const tbtcContract = require('@keep-network/tbtc/artifacts/TBTCToken.json');
-const tbtcAddress = '0x8dAEBADE922dF735c38C80C7eBD708Af50815fAa';
+const tbtcAddress = process.env.MAINTBTC;
 
 const contract = new ethers.Contract(tbtcAddress, tbtcContract.abi, provider);
 let dailyVolume = 0;
